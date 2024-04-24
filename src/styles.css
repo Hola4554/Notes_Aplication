@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root{
+  --primary-background-color:#202020;
+  --secondary-background-color:rgb(94, 94, 94);
+  --primary-accent-color:rgb(23, 204, 165);
+  --primary-accent-color-white:rgba(15, 231, 184, 0.8);
+  --secondary-accent-color:rgb(23, 138, 204);
+  --secondary-accent-color-white:rgba(20, 160, 241, 0.8);
+
+  --danger:#df2c14bb;
+
+  --white-blur: rgba(255, 255, 255, .1);
+
+  --note-purple: #CE97FB;
+  --note-yellow: #FDDF7E;
+  --note-green: #9BFBE1;
+  --note-blue: #67EBFA;
+
+
+  --accent-transparent: #3d545746;
+}

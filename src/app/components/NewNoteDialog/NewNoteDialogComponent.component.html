@@ -1,0 +1,23 @@
+<div class="container" (click)="handleClick($event, false)">
+
+  <div class="principalBoxNote" [style.background-color]="colorNote">
+    <div class="colorsMenu">
+      <div><button class="colorButton" (click)="colorNote = 'var(--note-blue)' "  style="background-color: var(--note-blue);"></button></div>
+      <div><button class="colorButton" (click)="colorNote = 'var(--note-green)' "  style="background-color: var(--note-green);"></button></div>
+      <div><button class="colorButton" (click)="colorNote = 'var(--note-yellow)' "  style="background-color: var(--note-yellow);"></button></div>
+      <div><button class="colorButton" (click)="colorNote = 'var(--note-purple)' "  style="background-color: var(--note-purple);"></button></div>
+    </div>
+
+    <div style="position: relative; top: 0; left: 0; width: 100vw;">
+      <input class="titleTextBox" type="text" placeholder="Título">
+      <textarea class="contentTextBox" type="text" placeholder="Contenido"></textarea>
+    </div>
+
+    <div class="buttonsOptionContainer">
+      <div><button class="buttonOption" (click)="cancelNote()" style="background-color: var(--danger);"><mat-icon> cancel </mat-icon></button></div>
+      <div><button class="buttonOption" (click)="saveNote()" style="background-color: var(--primary-accent-color-white);"><mat-icon> check </mat-icon></button></div>
+    </div>
+
+  </div>
+
+</div>
