@@ -26,4 +26,8 @@ export class DialogServiceService {
     return await this.http.put( this.URL + `/update/${note._id}`, note );
   }
 
+  async deleteNote ( note : Note ){
+    return await this.http.delete( this.URL + `/${note._id}`);
+  }
+
 }

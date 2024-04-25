@@ -4,4 +4,7 @@ export interface Note {
   content:string;
   color: string;
   list:string;
+  editable?:boolean;
+  originalContent?:string;
+  originalTitle?:string;
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { DialogServiceService } from './services/DialogService.service';
 import { Note } from './components/interfaces/note.interface';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
@@ -37,7 +37,10 @@ export class AppComponent {
   }
 
   openNote( note : Note ){
-    this.oppenedNotes.push(note)
+    const index = this.oppenedNotes.findIndex(element => element._id === note._id);
+    if (index != -1) return;
+    note.editable = false;
+    this.oppenedNotes.push(note);
   }
 
   isItemOpened(item: any): boolean {
@@ -50,6 +53,22 @@ export class AppComponent {
 
   addNote(){
     this.showDialogNewNote = true;
+  }
+
+  updateListOppened( event : Note[] ){
+    this.oppenedNotes = event;
+  }
+
+  deleteNote( note : Note ){
+    if (note.list === '1'){
+      let index = this.lista1.findIndex( n => n._id === note._id);
+      if (index != -1){
+        this.lista1.splice(index,1);
+      } else {
+        index = this.lista2.findIndex( n => n._id === note._id);
+        this.lista2.splice(index,1);
+      }
+    }
   }
 
   async drop(event: CdkDragDrop<Note[]>) {
@@ -73,11 +92,6 @@ export class AppComponent {
         (res) => {console.log(res)},
         (err) => {console.log(err)}
       )
-
-      console.log(event.previousContainer.id);
-      console.log(event.container.id);
-
-
     }
 
 

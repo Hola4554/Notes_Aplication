@@ -6,6 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {ClipboardModule} from '@angular/cdk/clipboard';
 
 import {
   DragDropModule,
@@ -23,8 +24,8 @@ import {
     FormsModule,
     MatSnackBarModule,
     CdkDropListGroup, CdkDropList, CdkDrag, DragDropModule,
-    MatExpansionModule
-
+    MatExpansionModule,
+    ClipboardModule,
   ],
   exports:[
     MatButtonModule,
@@ -33,6 +34,7 @@ import {
     FormsModule,
     MatSnackBarModule,
     MatExpansionModule,
+    ClipboardModule,
   ]
 
 })

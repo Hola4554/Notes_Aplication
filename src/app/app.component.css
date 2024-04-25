@@ -1,7 +1,8 @@
 .grid-background {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
+
   z-index: 0;
   align-items: center; justify-content: center; display: flex;
   background-color: var(--primary-background-color);
@@ -20,6 +21,25 @@
 
 .textButton{
   font-size: large;
+}
+
+.titleAcordion{
+  color: whitesmoke;
+}
+
+@media screen and (max-width: 1030px) {
+  .example-container {
+    width: auto;
+    padding-left: 10%;
+    justify-content: space-around; align-items: center; display: flex;
+  }
+  .example-list{
+    width: 100%;
+  }
+
+  .titleAcordion{
+    width: 80vw;
+  }
 }
 
 /* CDK DRAG&DROP */
