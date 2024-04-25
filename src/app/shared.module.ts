@@ -3,6 +3,16 @@ import { NgModule } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatIconModule} from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatExpansionModule} from '@angular/material/expansion';
+
+import {
+  DragDropModule,
+  CdkDrag,
+  CdkDropList,
+  CdkDropListGroup,
+} from '@angular/cdk/drag-drop';
 
 @NgModule({
 
@@ -10,11 +20,19 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatTooltipModule,
     MatIconModule,
+    FormsModule,
+    MatSnackBarModule,
+    CdkDropListGroup, CdkDropList, CdkDrag, DragDropModule,
+    MatExpansionModule
+
   ],
   exports:[
     MatButtonModule,
     MatTooltipModule,
     MatIconModule,
+    FormsModule,
+    MatSnackBarModule,
+    MatExpansionModule,
   ]
 
 })

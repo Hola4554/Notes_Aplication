@@ -9,8 +9,8 @@
     </div>
 
     <div style="position: relative; top: 0; left: 0; width: 100vw;">
-      <input class="titleTextBox" type="text" placeholder="Título">
-      <textarea class="contentTextBox" type="text" placeholder="Contenido"></textarea>
+      <input class="titleTextBox" [(ngModel)]="title" type="text" placeholder="Título">
+      <textarea class="contentTextBox" [(ngModel)]="content" type="text" placeholder="Contenido"></textarea>
     </div>
 
     <div class="buttonsOptionContainer">

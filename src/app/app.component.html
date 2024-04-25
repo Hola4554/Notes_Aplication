@@ -1,23 +1,79 @@
 <div style="position: relative; width: 100%; height: 100%;">
 
-  <app-new-note-dialog (dialogExit)=" showDialogNewNote = $event " *ngIf="showDialogNewNote"></app-new-note-dialog>
+  <app-new-note-dialog (dialogExit)=" showDialogNewNote = $event " (noteCreated)="start()" *ngIf="showDialogNewNote"></app-new-note-dialog>
+  <app-note-float-view *ngIf="oppenedNotes.length > 0" [notes]="oppenedNotes" (notesChanged)="oppenedNotes= $event" ></app-note-float-view>
 
   <div class="grid-background">
 
-    <!--
-    <ng-container *ngFor="let y of verticalPoints" style="z-index: 0;">
-      <ng-container *ngFor="let x of horizontalPoints">
-        <div class="dot" [style.top]="y + 'px' " [style.left]="x + 'px'"></div>
-      </ng-container>
-    </ng-container>
-    -->
-
-    <div style="width: 100%; height: 100%; align-items: center; justify-content: center; display: flex;">
-
-      <div>
+    <div style="display: block;  padding: 15px;">
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
         <button class="addButton" mat-button (click)="addNote()">
           <strong>+</strong>
         </button>
+      </div>
+
+      <div cdkDropListGroup>
+        <div class="example-container" *ngIf="lista1.length > 0">
+          <h2 style="color: whitesmoke;">To do</h2>
+
+          <div
+            cdkDropList
+            [cdkDropListData]="lista1"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <mat-accordion [multi]="true">
+              <mat-expansion-panel
+                                   hideToggle
+                                   cdkDrag
+                                   *ngFor="let item of lista1;let i = index"
+                                   [expanded]="isItemOpened(item)"
+                                   [style.background-color]="item.color"
+                                   [style.opacity]="0.8"
+                                   (click)="openNote(item)">
+                <mat-expansion-panel-header>
+                  <mat-panel-title style="color: var(--primary-background-color); font-weight: 700;">
+                    {{item.title}}
+                  </mat-panel-title>
+                  <mat-panel-description style="color: var(--primary-background-color); font-weight: 400;">
+                    {{item.content.substring(0,9)}}...
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <span style="font-weight: 400; color: var(--primary-background-color); font-style: italic;">Abierto</span>
+              </mat-expansion-panel>
+            </mat-accordion>
+
+          </div>
+        </div>
+
+        <div class="example-container">
+          <h2 style="color: whitesmoke;">Done</h2>
+
+          <div
+            cdkDropList
+            [cdkDropListData]="lista2"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <mat-accordion [multi]="true">
+              <mat-expansion-panel
+                                   hideToggle
+                                   cdkDrag
+                                   *ngFor="let item of lista2;let i = index"
+                                   [style.background-color]="item.color"
+                                   [style.opacity]="0.8"
+                                   (click)="openNote(item)">
+                <mat-expansion-panel-header>
+                  <mat-panel-title style="color: var(--primary-background-color); font-weight: 700;">
+                    {{item.title}}
+                  </mat-panel-title>
+                  <mat-panel-description style="color: var(--primary-background-color); font-weight: 400;">
+                    {{item.content.substring(0,9)}}...
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <span style="font-weight: 400; color: var(--primary-background-color); font-style: italic;">Abierto</span>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </div>
       </div>
 
     </div>
