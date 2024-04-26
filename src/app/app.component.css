@@ -29,7 +29,8 @@
 
 @media screen and (max-width: 1030px) {
   .example-container {
-    width: auto;
+    width: 80vw;
+
     padding-left: 10%;
     justify-content: space-around; align-items: center; display: flex;
   }
@@ -42,12 +43,26 @@
   }
 }
 
+.item-list:hover{
+  animation: 0.2s ease item-list-anim both;
+}
+
+@keyframes item-list-anim {
+  from{
+    border: 0px solid  whitesmoke;
+    margin: 0px;
+  }
+  to{
+    border: 3px solid  whitesmoke;
+    border-radius: 8px;
+    margin: 2px;
+  }
+}
+
 /* CDK DRAG&DROP */
 
 .example-container {
-  width: 400px;
-  max-width: 100%;
-  margin: 0 25px 25px 0;
+  margin: 0 25px 0 0;
   display: inline-block;
   vertical-align: top;
 }

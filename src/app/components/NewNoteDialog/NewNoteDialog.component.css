@@ -58,7 +58,7 @@
     width: 85%;
   }
 
-  .buttonsOptionContainer[_ngcontent-ng-c1341921367] {
+  .buttonsOptionContainer[_ngcontent-ng-c3852835532] {
     bottom: -70px;
     position: absolute;
     display: flex;
@@ -68,6 +68,26 @@
     align-content: center;
     flex-wrap: nowrap;
   }
+}
+
+.blue:hover{
+  color: var(--note-blue);
+  box-shadow: 0 0 45px var(--note-blue);
+}
+
+.green:hover{
+  color: var(--note-green);
+  box-shadow: 0 0 45px var(--note-green);
+}
+
+.yellow:hover{
+  color: var(--note-yellow);
+  box-shadow: 0 0 45px var(--note-yellow);
+}
+
+.purple:hover{
+  color: var(--note-purple);
+  box-shadow: 0 0 45px var(--note-purple);
 }
 
 .colorButton{
@@ -112,6 +132,12 @@ input:focus, textarea:focus {
   outline: none;
 }
 
+input:hover, textarea:hover {
+  border: 3px solid  whitesmoke;
+  box-shadow: 0 0 5px var(--primary-accent-color-white);
+  outline: none;
+}
+
 input::placeholder, textarea::placeholder {
   color: rgba(255, 255, 255, 0.7);;
 }
@@ -132,3 +158,50 @@ input::placeholder, textarea::placeholder {
   justify-content: center;
   transform: translateX(55vw);
 }
+
+.cancel:hover{
+  color: var(--danger);
+  box-shadow: 0 0 45px var(--danger);
+}
+
+.save:hover{
+  color: var(--primary-accent-color-white);
+  box-shadow: 0 0 45px var(--primary-accent-color-white);
+}
+
+/*ANIM*/
+
+.scale-in-center {
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-out-center {
+	animation: scale-out-center 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+}
+

@@ -83,9 +83,9 @@ export class AppComponent {
       );
 
       if (event.previousContainer.id === 'cdk-drop-list-0'){
-        event.container.data[event.currentIndex].list = '1';
-      } else {
         event.container.data[event.currentIndex].list = '2';
+      } else {
+        event.container.data[event.currentIndex].list = '1';
       }
 
       (await this.dialogService.updateNote(event.container.data[event.currentIndex] as NoteUpdate)).subscribe(

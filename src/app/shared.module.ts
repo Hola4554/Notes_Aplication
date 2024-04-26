@@ -15,6 +15,8 @@ import {
   CdkDropListGroup,
 } from '@angular/cdk/drag-drop';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
 
   imports:[
@@ -26,6 +28,7 @@ import {
     CdkDropListGroup, CdkDropList, CdkDrag, DragDropModule,
     MatExpansionModule,
     ClipboardModule,
+    BrowserAnimationsModule,
   ],
   exports:[
     MatButtonModule,
@@ -35,6 +38,7 @@ import {
     MatSnackBarModule,
     MatExpansionModule,
     ClipboardModule,
+    BrowserAnimationsModule,
   ]
 
 })

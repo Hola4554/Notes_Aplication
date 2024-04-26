@@ -1,4 +1,4 @@
 export const environment = {
   production : true,
-  domain: 'https://backendsporthouse.onrender.com/'
+  domain: 'https://backend-notes-application.onrender.com/'
 }

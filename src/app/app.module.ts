@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared.module';
 import { NewNoteDialogComponent } from './components/NewNoteDialog/NewNoteDialog.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,7 +22,7 @@ import { NoteFloatView } from './components/note-float-view/noteFloatView.compon
     HttpClientModule,
     DragDropModule,
   ],
-  providers: [],
+  providers: [ provideAnimations() ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
