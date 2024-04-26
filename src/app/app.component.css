@@ -43,6 +43,9 @@
   }
 }
 
+.item-list{
+  min-width: 340px;
+}
 .item-list:hover{
   animation: 0.2s ease item-list-anim both;
 }
@@ -70,6 +73,7 @@
 .example-list {
   border: solid 2px #ccc;
   min-height: 48px;
+  min-width: 340px;
   background: var(--secondary-background-color);
   border-radius: 4px;
   overflow: hidden;

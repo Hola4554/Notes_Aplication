@@ -14,7 +14,7 @@
 
       <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
 
-        <div cdkDropListGroup style="position: relative;" *ngIf="lista1.length > 0">
+        <div cdkDropListGroup style="position: relative;" *ngIf="lista1.length > 0 || lista2.length > 0">
           <div class="example-container">
             <h2 class="titleAcordion">To do</h2>
 
@@ -23,7 +23,7 @@
               [cdkDropListData]="lista1"
               class="example-list"
               (cdkDropListDropped)="drop($event)">
-              <mat-accordion [multi]="true">
+              <mat-accordion style="min-width: 340px;" [multi]="true">
                 <mat-expansion-panel
                                      hideToggle
                                      cdkDrag
